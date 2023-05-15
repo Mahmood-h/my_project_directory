@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProvincieController!{% endblock %}
+
+{% block body %}
+
+
+    <a class="btn btn-primary" href="/home" role="button">Home</a>
+    <table class="table">
+        <tbody>
+        {% for city in provincie.cities %}
+            <tr>
+                <td>{{ city.name }}</td>
+                <td><a class="btn btn-danger" href="#" role="button">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
