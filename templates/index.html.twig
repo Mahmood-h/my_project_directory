@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProvincieController!{% endblock %}
+
+{% block body %}
+    <h1>Provincies in Nederland</h1>
+    <h5>Provincie naam</h5>
+
+
+    <table class="table">
+        <tbody>
+        {% for provincie in provincies %}
+        <tr>
+
+            <td>{{ provincie.name }}</td>
+            <td><a class="btn btn-primary" href="{{ path("details",{id:provincie.id}) }}" role="button">Steden</a></td>
+            <td><a class="btn btn-warning" href="{{ path("update",{id:provincie.id}) }}" role="button">Update</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-success" href="/insert" role="button">Insert</a>
+{% endblock %}
